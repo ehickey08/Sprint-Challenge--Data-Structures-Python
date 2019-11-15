@@ -34,6 +34,29 @@ for name_1 in names_1:
             duplicates.append(name_1)
 '''
 
+
+'''
+Stretch: only use python lists
+'''
+
+duplicates = []
+
+def binary_search(value, data):
+    if len(data) == 0:
+        return
+    middle = (len(data) -1) // 2
+    if value == data[middle]:
+        duplicates.append(value)
+    elif value < data[middle]:
+        binary_search(value, data[:middle])
+    else:
+        binary_search(value, data[middle+1:])
+
+data = sorted(names_1)
+
+for name in names_2:
+    binary_search(name, data)
+
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
