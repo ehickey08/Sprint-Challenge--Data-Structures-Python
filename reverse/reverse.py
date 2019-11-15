@@ -43,5 +43,4 @@ class LinkedList:
     return False
 
   def reverse_list(self):
-    # TO BE COMPLETED
     pass
